@@ -1,0 +1,6 @@
+
+div.table {border: 1px solid black; display: table; }
+div.tr {display: table-row; }
+div.td {display: table-cell; }
+
+

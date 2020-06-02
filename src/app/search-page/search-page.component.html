@@ -1,0 +1,83 @@
+<form class="search-section" [formGroup]="basicSearchValidation">
+  <div class="td">
+    Basic Search
+    <br>
+    <!-- <mat-icon>done</mat-icon> -->
+    <!-- <app-date-picker></app-date-picker> -->
+
+    <br>
+    <div>
+      <!-- BU View  -->
+
+      <mat-form-field>
+  <mat-label>BU View</mat-label>
+  <mat-select formControlName="buView">
+    <mat-option *ngFor="let buView of buViews" [value]="buView.value">
+      {{buView.name}}
+    </mat-option>
+  </mat-select>
+  <mat-error *ngIf="basicSearchValidation.get('fltDateFrom').hasError('required')">
+            BU View is Required!
+          </mat-error>
+</mat-form-field>
+
+    <!-- <select [(ngModel)]="buView" >
+      <option *ngFor="let buView of buViews" [ngValue]="buView.value">{{buView.name}}</option>
+    </select> -->
+    </div>
+    <br>
+    <div>
+      
+      <!-- Flt Date From -->
+      <mat-form-field>
+    <mat-label>Flt Date From</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="fltDateFrom" required>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+           <mat-error *ngIf="basicSearchValidation.get('fltDateFrom').hasError('required')">
+            Flt Date From is Required!
+          </mat-error>
+    </mat-form-field>
+    
+      <!-- <input type="text"> -->
+    </div>
+    <br>
+    <div>
+      <!-- Flt Date To -->
+      <mat-form-field>
+    <mat-label>Flt Date To</mat-label>
+          <input matInput [matDatepicker]="picker1" formControlName="fltDateTo">
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+          <mat-error *ngIf="basicSearchValidation.get('fltDateTo').hasError('required')">
+            Flt Date To is Required!
+          </mat-error>
+          <mat-error *ngIf="basicSearchValidation.get('fltDateTo').hasError('minDate')">
+            Flt Date To Should be greater than and Flt Date From
+          </mat-error>
+    </mat-form-field>
+    <br><br>
+    </div>
+  </div>
+  <div class="td">
+    <div class = "table">
+      Cargo type <br><br>
+      <mat-checkbox>DG</mat-checkbox>&nbsp; <mat-checkbox>Pharmacy</mat-checkbox><mat-checkbox>Perishable</mat-checkbox>&nbsp;
+     <mat-checkbox>
+      Temp Control</mat-checkbox>&nbsp;<mat-checkbox>Live Animals</mat-checkbox>&nbsp; <mat-checkbox>Others</mat-checkbox>
+    </div>
+    <!-- <div class = "table">
+      Status <br><br>
+     <mat-checkbox>DG</mat-checkbox>&nbsp; <mat-checkbox>Pharmacy</mat-checkbox><mat-checkbox>Perishable</mat-checkbox>&nbsp;
+     <mat-checkbox>
+      Temp Control</mat-checkbox>&nbsp;<mat-checkbox>Live Animals</mat-checkbox>&nbsp; <mat-checkbox>Others</mat-checkbox>
+    </div> -->
+  </div>
+
+  <!-- <a mat-raised-button href="./search-page/search-page.component">Advance Search</a> -->
+
+          <button type="submit">
+            Search
+            <!-- <mat-icon>arrow_forward</mat-icon> LOGIN -->
+          </button>
+</form>
