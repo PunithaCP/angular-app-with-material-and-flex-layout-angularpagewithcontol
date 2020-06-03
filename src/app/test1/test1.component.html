@@ -1,0 +1,8 @@
+<div class="search-section" [formGroup]="basicSearchValidation">
+  <mat-form-field>
+    <mat-label>Flt Date To</mat-label>
+          <input matInput [matDatepicker]="picker1" required formControlName="firstName">
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+</div>
