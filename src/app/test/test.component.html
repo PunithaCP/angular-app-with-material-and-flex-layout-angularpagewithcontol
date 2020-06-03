@@ -1,0 +1,20 @@
+<form class="example-form" [formGroup]="userAddressValidations">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="First Name" formControlName="firstName">
+    <mat-error *ngIf="userAddressValidations.get('firstName').hasError('required')">
+      First Name is Required!
+    </mat-error>
+    <mat-error *ngIf="userAddressValidations.get('firstName').hasError('minlength')">
+      First Name should be atleast 4 characters long!
+    </mat-error>
+
+    <mat-error *ngIf="userAddressValidations.get('firstName').hasError('maxlength')">
+      First Name can be atmax n characters long!
+    </mat-error>
+
+    <mat-error *ngIf="userAddressValidations.get('firstName').hasError('pattern')">
+      First Name must follow this pattern!
+    </mat-error>
+  </mat-form-field>
+
+</form>
