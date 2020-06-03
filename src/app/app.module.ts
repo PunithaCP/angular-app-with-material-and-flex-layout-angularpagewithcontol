@@ -6,12 +6,13 @@ import { AppComponent } from "./app.component";
 import { SearchComponent } from './search/search.component';
 import { RouterModule } from "@angular/router";
 import { AdvanceSearchPageComponent } from './advance-search-page/advance-search-page.component';
+import { DatePickerComponent } from './date-picker/date-picker.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, RouterModule.forRoot([
     { path: 'search', component: SearchComponent }
   ])],
-  declarations: [AppComponent, SearchComponent, AdvanceSearchPageComponent],
+  declarations: [AppComponent, SearchComponent, AdvanceSearchPageComponent, DatePickerComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
