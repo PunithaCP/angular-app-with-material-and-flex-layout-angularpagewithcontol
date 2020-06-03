@@ -1,0 +1,83 @@
+<form class="search-section" [formGroup]="advanceSearchValidation">
+  <div class="td">
+    <b>Advance Search</b>
+    <br>
+    <br>
+    <div> 
+      <mat-form-field>
+    <mat-label>Flt No</mat-label>
+    <input matInput formControlName="fltNo" required>
+    <mat-error *ngIf="advanceSearchValidation.get('fltNo').hasError('pattern')">Invalid fltNo</mat-error>
+    </mat-form-field>&nbsp; &nbsp;
+    <mat-form-field>
+    <mat-label>AWB</mat-label>
+    <input matInput formControlName="awb" required>
+    <mat-error *ngIf="advanceSearchValidation.get('awb').hasError('required')">AWB No is Required</mat-error>
+    <mat-error *ngIf="advanceSearchValidation.get('awb').hasError('minlength')">AWB No Should be 11 digits</mat-error>
+    <mat-error *ngIf="advanceSearchValidation.get('awb').hasError('maxlength')">AWB No Should be 11 digits</mat-error>
+    <mat-error *ngIf="advanceSearchValidation.get('awb').hasError('pattern')">Invalid AWB No</mat-error>
+    </mat-form-field>
+    </div>
+    <br>
+    <div>
+    <mat-form-field>
+    <mat-label>SHC</mat-label>
+    <input matInput formControlName="shc" required>
+    <mat-error *ngIf="advanceSearchValidation.get('shc').hasError('required')">SHC is Required</mat-error>
+    <mat-error *ngIf="advanceSearchValidation.get('shc').hasError('minlength')">SHC Should be 3 Characters</mat-error>
+    <mat-error *ngIf="advanceSearchValidation.get('shc').hasError('maxlength')">SHC Should be 3 Characters</mat-error>
+    <mat-error *ngIf="advanceSearchValidation.get('shc').hasError('pattern')">Invalid SHC</mat-error>
+    </mat-form-field> &nbsp; &nbsp;
+    <mat-form-field>
+    <mat-label>ULD/Bt</mat-label>
+    <input matInput #uldOrBt>
+    </mat-form-field>
+    </div>
+    <br>
+
+    <mat-form-field>
+      <mat-label>Module</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let module of modules" [value]="module.value">
+          {{module.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  &nbsp;&nbsp;
+    <mat-form-field>
+      <mat-label>Carrier</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let carrier of carriers" [value]="carrier.value">
+          {{carrier.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Carrier Group</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let carrierGroup of carrierGroups" [value]="carrierGroup.value">
+          {{carrierGroup.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- <div>Module 
+    <select [(ngModel)]="module" >
+      <option *ngFor="let module of modules" [ngValue]="module.value">{{module.name}}</option>
+    </select>
+    Carrier
+    <select [(ngModel)]="carrier" >
+      <option *ngFor="let carrier of carriers" [ngValue]="carrier.value">{{carrier.name}}</option>
+    </select>
+    Carrier Group
+    <select [(ngModel)]="carrierGroup" >
+      <option *ngFor="let carrierGroup of carrierGroups" [ngValue]="carrierGroup.value">{{carrierGroup.name}}</option>
+    </select>
+    </div> -->
+    <br>
+    <div>
+      &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<button type="submit">Search</button>&nbsp; &nbsp;<button (click)="gotoSearch()">Cancel</button>
+    </div>
+  </div>
+</form>
