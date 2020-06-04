@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormBuilder, FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
+import {FormControl, FormGroup} from '@angular/forms';
+import value from '*.json';
 
 @Component({
   selector: 'app-form-controls',
@@ -9,11 +10,18 @@ import {FormGroup, FormBuilder, FormControl, FormGroupDirective, NgForm, Validat
 export class FormControlsComponent implements OnInit {
 
   constructor() { }
+
   // formControls: FormGroup;
+  // slideToggleChecked = new FormControl({value: true});
   autoCompleteField = new FormControl();
-  // slideToggleChecked = new FormControl('true');
   options: string[] = ['One', 'Two', 'Three'];
-  slideToggleChecked = true;
+  
+  fltDateTo: FormControl;
+  // slideToggleChecked = true;
+  formControls = new FormGroup({
+    slideToggleChecked: new FormControl([{value: true}]),
+    // lastName: new FormControl(''),
+  });
   ngOnInit() {
   }
 
