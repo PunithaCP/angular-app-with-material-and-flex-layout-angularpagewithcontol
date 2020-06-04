@@ -15,14 +15,18 @@ export class FormControlsComponent implements OnInit {
   // slideToggleChecked = new FormControl({value: true});
   autoCompleteField = new FormControl();
   options: string[] = ['One', 'Two', 'Three'];
-  
+  // slideToggleCheckedVal;
   fltDateTo: FormControl;
-  // slideToggleChecked = true;
+  
   formControls = new FormGroup({
     slideToggleChecked: new FormControl([{value: true}]),
     // lastName: new FormControl(''),
   });
+
+  // console.log(this.formControls.get('slideToggleChecked').value);
+  slideToggleCheckedVal = (this.formControls.get('slideToggleChecked').value);
   ngOnInit() {
+    console.log(this.formControls.value.slideToggleChecked);
   }
 
 }
