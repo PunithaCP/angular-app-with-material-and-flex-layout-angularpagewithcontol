@@ -5,5 +5,14 @@
   <a [routerLink]="['/advanceSearch']">
       Advance Seach
     </a>
+    &nbsp;&nbsp;
+    <button mat-button [matMenuTriggerFor]="controls">Controls</button>
+    <mat-menu #controls="matMenu">
+      <!-- Controls -->
+      <button mat-menu-item [routerLink]="['/formControls']">Form Controls</button>
+      <!-- <button mat-menu-item [matMenuTriggerFor]="invertebrates">Invertebrates</button> -->
+    </mat-menu>
 <br><br>
     <router-outlet></router-outlet>
+
+    

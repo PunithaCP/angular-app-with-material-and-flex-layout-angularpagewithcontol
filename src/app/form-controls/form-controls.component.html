@@ -1,0 +1,13 @@
+<mat-form-field class="example-full-width">
+    <input type="text"
+           placeholder="Auto Complete Field"
+           aria-label="Number"
+           matInput
+           [formControl]="autoCompleteField"
+           [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of options" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>

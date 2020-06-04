@@ -8,7 +8,7 @@ import { MatIconRegistry } from '@angular/material';
 
 // import { MatFormFieldModule } from '@angular/material/form-field';
 // import { MatInputModule } from '@angular/material/input';
-import { MatDatepickerModule, MatNativeDateModule,MatCheckboxModule,MatSelectModule, MatInputModule, MatIconModule, MatSnackBarModule, MatSidenavModule, MatProgressBarModule, MatListModule, MatTooltipModule } from '@angular/material';
+import { MatDatepickerModule, MatNativeDateModule,MatCheckboxModule,MatSelectModule, MatInputModule, MatIconModule, MatSnackBarModule, MatSidenavModule, MatProgressBarModule, MatListModule, MatTooltipModule,MatAutocompleteModule,MatMenuModule } from '@angular/material';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule} from '@angular/forms';
 
 import { AppComponent } from "./app.component";
@@ -18,15 +18,18 @@ import { AdvanceSearchPageComponent } from './advance-search-page/advance-search
 import { SearchComponent } from './search/search.component';
 import { TestComponent } from './test/test.component';
 import { Test1Component } from './test1/test1.component';
+import { FormControlsComponent } from './form-controls/form-controls.component';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule,MatInputModule, MatDatepickerModule, MatNativeDateModule, MatCheckboxModule, MatSelectModule, MatInputModule,BrowserAnimationsModule,MatIconModule, MatSnackBarModule, ReactiveFormsModule, ReactiveFormsModule, MatSidenavModule, MatProgressBarModule, MatListModule, MatTooltipModule, 
+  imports: [BrowserModule, FormsModule,MatInputModule, MatDatepickerModule, MatNativeDateModule, MatCheckboxModule, MatSelectModule, MatInputModule,BrowserAnimationsModule,MatIconModule, MatSnackBarModule, ReactiveFormsModule, ReactiveFormsModule, MatSidenavModule, MatProgressBarModule, MatListModule, MatTooltipModule,
+  MatAutocompleteModule, MatMenuModule,
   RouterModule.forRoot([
       { path: '', component: SearchPageComponent },
       { path: 'advanceSearch', component: AdvanceSearchPageComponent},
+      { path: 'formControls', component: FormControlsComponent},
       { path: 'search', component: SearchPageComponent}
     ])],
-  declarations: [AppComponent, SearchPageComponent, DatePickerComponent, AdvanceSearchPageComponent, SearchComponent, TestComponent, Test1Component],
+  declarations: [AppComponent, SearchPageComponent, DatePickerComponent, AdvanceSearchPageComponent, SearchComponent, TestComponent, Test1Component, FormControlsComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
