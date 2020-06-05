@@ -12,7 +12,7 @@
       </mat-option>
     </mat-autocomplete>
   </mat-form-field>&nbsp;&nbsp;
-  <mat-slide-toggle formControlName="slideToggleChecked">Slide me! {{slideToggleCheckedVal.value}}</mat-slide-toggle>
+  <mat-slide-toggle formControlName="slideToggleChecked" (change)="onChange()">Slide me! {{slideToggleCheckedVal.value}}</mat-slide-toggle>
 </form>
   
   
