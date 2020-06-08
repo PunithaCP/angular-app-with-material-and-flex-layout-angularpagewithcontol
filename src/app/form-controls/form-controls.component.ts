@@ -25,7 +25,7 @@ export class FormControlsComponent implements OnInit {
   // formControls: FormGroup;
   // slideToggleChecked = new FormControl({value: true});
 
-  @ViewChild('monitored') monitoredEl: ElementRef<HTMLElement>;
+  @ViewChild('monitored', {static: false}) monitoredEl: ElementRef<HTMLElement>;
   origin = this.formatOrigin(null);
 
   autoCompleteField = new FormControl();
